@@ -6,9 +6,12 @@ export default class CreateRecipe extends Component {
     super()
     this.state = {
       title: "",
-      ingredients: [{ name: "", quantity: 0, unit: "" }],
+      name:"",
+      quantity:0,
+      unit:"",
       imageUrl: "",
-      directions: ""
+      directions: "",
+      ingredients: []
     }
   }
 
@@ -25,7 +28,7 @@ export default class CreateRecipe extends Component {
   }
 
   createRecipe = (newRecipe) => {
-    axios.post("/recipes", newRecipe).then(res => {
+    axios.post("/recipes", {title, imageUrl, directions, ingredients:{name, quantity, unit}}).then(res => {
     }).catch(err => console.log("error", err))
   }
 
