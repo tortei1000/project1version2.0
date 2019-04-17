@@ -22,5 +22,12 @@ module.exports = {
 
   get: (req, res) => {
     res.send(recipes)
+  },
+  create: (req, res)=> {
+    let recipe = req.body
+    recipe.id = id++
+    recipes.push(recipe)
+    res.send(recipes)
   }
+
 }

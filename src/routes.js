@@ -1,12 +1,14 @@
 import React from 'react';
 import { Route, Switch } from "react-router-dom"
 import Home from "./components/Home"
-import Details from "./Details"
+import CreateRecipe from './components/CreateRecipe';
+import Calendar from './components/Calendar';
 
 export default (
 
   <Switch>
     <Route component={Home} exact path="/" />
-    <Route component={Details} path="/details" />"
+    <Route component={Calendar} path="/calendar" />"
+    <Route component={CreateRecipe} path="/createrecipe" />
   </Switch>
 )

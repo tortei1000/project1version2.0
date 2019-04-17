@@ -1,27 +1,30 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import axios from "axios";
 import Recipe from "./Recipe";
+import CreateRecipe from "./CreateRecipe";
 
 export default class Home extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      recipeDisplay : []
+      recipeDisplay: []
     }
   }
 
-  componentDidMount(){
-    axios.get("/recipes").then((res)=>{
+  componentDidMount() {
+    axios.get("/recipes").then((res) => {
       this.setState({
-        recipeDisplay:res.data
+        recipeDisplay: res.data
       })
     }).catch(err => console.log("error", err))
   }
 
-  render(){
-    return(
+ 
+
+  render() {
+    return (
       <div>
-        <Recipe recipeDisplay = {this.state.recipeDisplay} />
+        <Recipe recipeDisplay={this.state.recipeDisplay} />
       </div>
     )
   }
